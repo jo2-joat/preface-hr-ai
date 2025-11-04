@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preface HR-AI | Your 24/7 HR Companion</title>
+  <meta content="Preface HR-AI - Provide 24/7 help with policies, annual leaves, payslips & more." name="description">
+  <!-- n8n Chat -->
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --preface-header: #404041;
+      --preface-user: #7cb9e8;
+      --chat--header--background: var(--preface-header);
+      --chat--message--user--background: var(--preface-user);
+      --chat--message--user--color: #1e293b;
+      --chat--window--width: 100vw;
+      --chat--window--height: 100vh;
+      --chat--input--send--button--color: #7cb9e8;
+    }
+    html,body,#n8n-chat{margin:0;padding:0;width:100%;height:100%;background:#f8fafc;font-family:Inter,system-ui}
+    .n8n-chat-toggle{display:none!important}
+
+    /* Logo-only header */
+    .chat-heading {
+      padding: 0;
+      position: relative;
+      justify-content: flex-start;
+    }
+    .chat-heading::before {
+      content: "";
+      display: inline-block;
+      width: 180px;
+      height: 40px;
+      margin: 0 1rem 0 0;
+      background: url('https://res.cloudinary.com/preface/image/upload/w_1024,c_limit,f_auto/v1633826301/r2021/assets/images/preface_logo.png') center/contain no-repeat;
+      filter: brightness(0) invert(1);
+    }
+    .chat-heading h1, 
+    .chat-header p{
+      margin: 0 !important;
+    }
+    .chat-button {
+        background: #7cb9e8 !important;
+        color: #1e293b !important;
+        font-weight: 600 !important;
+      }
+
+    .chat-button:hover {
+      background: #404041 !important;
+      color: white !important;
+    }
+    .chat-get-started-footer {
+      display: none;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="n8n-chat"></div>
+
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+  createChat({
+    webhookUrl: 'https://prefacecontent.app.n8n.cloud/webhook/a3e8906d-0fa9-4581-b8ab-1c8b242953cc/chat',
+
+    target: '#n8n-chat',
+    mode: 'fullscreen',
+    showWelcomeScreen: true,
+    enableStreaming: true,
+    loadPreviousSession: true,
+    allowFileUploads: false,
+    allowedFilesMimeTypes: 'image/*,application/pdf,.doc,.docx',
+
+    initialMessages: [
+      "Good day! I'm **Preface HR-AI**, your Preface HR Assistant.",
+      "Ask me anything about leave, payroll or policies."
+    ],
+
+    i18n: {
+      en: {
+        title: "HR-AI",
+        subtitle: "Provide 24/7 help with policies, annual leaves, payslips & more",
+        footer: "Secure • Private • Powered by Preface AI",
+        getStarted: "Start Chat",
+        inputPlaceholder: "e.g. How do I apply for WFH?",
+      }
+    }
+  });
+
+
+</script>
+
+</body>
+</html>
